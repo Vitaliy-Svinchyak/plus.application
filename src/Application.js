@@ -9,10 +9,20 @@ var Application = function (options) {
 
     merge(this, options || {});
 
-    this.config = new Config({dir: this.dir, env: this.env});
-    this.container = Container.load({dir: this.dir, env: this.env});
+    this.config = new Config(
+        {
+            dir: this.dir,
+            env: this.env
+        });
 
-    this.container.set('config', this.config);
+    this.container = Container.load(
+        {
+            dir: this.dir,
+            env: this.env,
+            services: {
+                config: this.config
+            }
+        });
 
     this.get = function (name) {
         return this.container.get(name);

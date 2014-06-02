@@ -81,4 +81,14 @@ describe('Application', function () {
 
     });
 
+    it('should allow to use config in container.js', function () {
+
+        var app = new Application({
+            dir: __dirname + '/app3'
+        });
+
+        app.container.get('config1').should.equal(app.container.get('config'));
+
+    });
+
 });

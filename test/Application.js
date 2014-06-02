@@ -13,6 +13,15 @@ describe('Application', function () {
         'value'.should.equal(app.config.get('option'));
     });
 
+    it('should define config to container', function () {
+
+        var app = new Application({
+            dir: __dirname + '/app1'
+        });
+
+        app.container.get('config').should.equal(app.config);
+    });
+
     it('should load container', function () {
 
         var app = new Application({
@@ -25,6 +34,29 @@ describe('Application', function () {
 
     });
 
+    it('should allow to get services', function () {
+
+        var app = new Application({
+            dir: __dirname + '/app1'
+        });
+
+        app.get('service1').should.deep.equal({
+            hi: 'application'
+        });
+
+    });
+
+    it('should allow to set services', function () {
+
+        var app = new Application({
+            dir: __dirname + '/app1'
+        });
+
+        app.set('service1', 'hi');
+
+        app.get('service1').should.equal('hi');
+
+    });
 
     it('should load configuration for env', function () {
 

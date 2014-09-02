@@ -107,5 +107,30 @@ describe('Application', function () {
 
     });
 
+    it('should load configuration and services via method application.load()', function () {
+
+        var app = new Application({
+            dir: __dirname + '/app5'
+        });
+
+        app.config.get('name1').should.equal('value1');
+        app.config.get('name2').should.equal('value2');
+        (app.config.get('name3') == null).should.be.ok;
+
+        app.container.get('service1').should.deep.equal({service: 1});
+        app.container.get('service2').should.deep.equal({service: 2});
+        (app.container.get('service3') == null).should.be.ok;
+
+        app.load({dir: __dirname + '/app5.1' });
+
+        app.config.get('name1').should.equal('value1.2');
+        app.config.get('name2').should.equal('value2.2');
+        app.config.get('name3').should.equal('value3.2');
+
+        app.container.get('service1').should.deep.equal({service: 1.2});
+        app.container.get('service2').should.deep.equal({service: 2.2});
+        app.container.get('service3').should.deep.equal({service: 3.2});
+
+    });
 
 });

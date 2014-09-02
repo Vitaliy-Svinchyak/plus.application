@@ -32,6 +32,17 @@ var Application = function (options) {
         return this.container.set(name, value);
     }
 
+    this.load = function(options)
+    {
+        var options = merge({
+            dir: this.dir,
+            env: this.env
+        }, options || {});
+
+        this.config.load(options);
+        this.container.load(options);
+    }
+
 };
 
 module.exports = Application;

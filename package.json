@@ -1,6 +1,6 @@
 {
   "name": "plus.application",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Application",
   "main": "src/Application.js",
   "scripts": {
@@ -17,6 +17,6 @@
   "dependencies": {
     "merge": "~1.1.3",
     "plus.config": "~1.0.4",
-    "plus.container": "~1.0.7"
+    "plus.container": "~1.0.8"
   }
 }

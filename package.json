@@ -1,8 +1,10 @@
 {
   "name": "plus.application",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Application",
   "main": "src/Application.js",
+  "homepage": "https://bitbucket.org/slavahatnuke/plus.application",
+  "repository" : { "type" : "git" , "url" : "git@bitbucket.org:slavahatnuke/plus.application.git"},
   "scripts": {
     "test": "node_modules/.bin/mocha -R spec",
     "cover": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R spec"

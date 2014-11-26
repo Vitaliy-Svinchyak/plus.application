@@ -133,4 +133,18 @@ describe('Application', function () {
 
     });
 
+    it('should wrap any other application', function () {
+
+        var app = {};
+
+        var _app = new Application({
+            dir: __dirname + '/app1'
+        }).wrap(app);
+
+        app.config.should.equal(_app.config);
+        app.container.should.equal(_app.container);
+        app.application.should.equal(_app);
+
+    });
+
 });

@@ -43,6 +43,14 @@ var Application = function (options) {
         this.container.load(options);
     }
 
+    this.wrap = function (object) {
+        object.config = this.config;
+        object.container = this.container;
+        object.application = this;
+
+        return this;
+    }
+
 };
 
 module.exports = Application;

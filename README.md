@@ -24,6 +24,28 @@ it has 2 parameters `dir` and `env` it loads form file system configuration and 
 
 ```
 
+Additional ways with YAML/JS configs, EXT=js|yaml
+please take a look https://www.npmjs.com/package/plus.config
+
+```
+default.EXT
+default-{instance}.EXT
+{deployment}.EXT
+{deployment}-{instance}.EXT
+{short_hostname}.EXT
+{short_hostname}-{instance}.EXT
+{short_hostname}-{deployment}.EXT
+{short_hostname}-{deployment}-{instance}.EXT
+{full_hostname}.EXT
+{full_hostname}-{instance}.EXT
+{full_hostname}-{deployment}.EXT
+{full_hostname}-{deployment}-{instance}.EXT
+local.EXT
+local-{instance}.EXT
+local-{deployment}.EXT
+local-{deployment}-{instance}.EXT
+```
+
 ### App.js
 ```
 

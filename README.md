@@ -47,23 +47,22 @@ local-{deployment}-{instance}.EXT
 ```
 
 ### App.js
-```
+```javascript
 
 // app.js example
 
     var Application = require('plus.application');
 
-            var app = new Application({
-                dir: __dirname,
-                env: process.env.NODE_ENV || 'dev' // it works in the 'dev' environment by default
-            });
+    var app = new Application({
+        dir: __dirname,
+        env: process.env.NODE_ENV || 'dev' // NODE_ENV or 'dev'
+    });
 
-            app.config.get('port');
-            app.container.get('myService1');
+    app.config.get('port');
+    app.container.get('myService1');
 
-            // app.config instanceof require('plus.config')
-            // app.container instanceof require('plus.container')
-
+    // app.config instanceof require('plus.config')
+    // app.container instanceof require('plus.container')
 
 ```
 
@@ -76,7 +75,7 @@ local-{deployment}-{instance}.EXT
 ```
 
 // container.js example
-```
+```javascript
 module.exports = function (container) {
 
     var Class1 = function(){  }

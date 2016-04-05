@@ -105,3 +105,5 @@ Please take a look on:
 - `plus.container` - https://www.npmjs.org/package/plus.container
 
 
+Have a fun and manage your applications!
+[+1G Team](http://plus1generation.com)

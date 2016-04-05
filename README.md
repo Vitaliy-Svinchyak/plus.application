@@ -87,6 +87,19 @@ module.exports = function (container) {
 }
 ```
 
+## Wrap
+wrapper example for app it adds config and container
+```javascript
+        var app = require('express');
+        
+        new Application({
+            dir: __dirname
+        }).wrap(app);
+
+        app.config.get('myParameter');
+        app.container.get('myService')
+
+```
 
 Please take a look on:
 - `plus.config` - https://www.npmjs.org/package/plus.config

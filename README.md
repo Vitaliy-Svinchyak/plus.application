@@ -2,7 +2,7 @@
 
 The main goal of this package that loading app configuration and app services.
 
-it uses 2 packages `plus.config` and `plus.container` and helps to manage application configuration and dependency injection.
+it uses 2 packages `plus.container` and `plus.config` and helps to manage application configuration and dependency injection.
 it has 2 parameters `dir` and `env` it loads form file system configuration and container (services) for some environment.
 
 

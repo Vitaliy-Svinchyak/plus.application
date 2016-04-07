@@ -66,8 +66,9 @@ more details about container configuration here [plus.container](https://www.npm
 ## Wrap
 wrapper example for app it adds config and container
 ```javascript
-        var app = require('express');
-        
+        var express = require('express');
+        var app = express();
+
         new Application({
             dir: __dirname,
             env: process.env.NODE_ENV || 'dev'

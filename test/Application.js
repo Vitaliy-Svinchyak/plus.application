@@ -13,6 +13,15 @@ describe('Application', function () {
         'value'.should.equal(app.config.get('option'));
     });
 
+    it('should support create() method', function () {
+
+        var app = Application.create({
+            dir: __dirname + '/app1'
+        });
+
+        'value'.should.equal(app.config.get('option'));
+    });
+
     it('should define config to container', function () {
 
         var app = new Application({

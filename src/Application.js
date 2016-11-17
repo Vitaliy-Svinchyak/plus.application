@@ -53,4 +53,8 @@ var Application = function (options) {
 
 };
 
+Application.create = function (options) {
+    return new Application(options);
+};
+
 module.exports = Application;

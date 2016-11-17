@@ -38,7 +38,7 @@ module.exports = {
         dir: __dirname,
         env: process.env.NODE_ENV || 'dev' // NODE_ENV or 'dev'
     });
-
+    
     app.config.get('port'); // 3000
     app.container.get('myService1'); // it should be service, will explain soon.
 
@@ -61,7 +61,8 @@ module.exports = function (container) {
     
 }
 ```
-more details about container configuration here [plus.container](https://www.npmjs.com/package/plus.container)
+more details about container configuration here [plus.container](https://www.npmjs.com/package/plus.container) 
+its ES5/ES6 dependency injection container.
 
 ## Wrap
 wrapper example for app it adds config and container
@@ -113,6 +114,23 @@ config.json example
 }
 ```
 Take a look [nconf](https://www.npmjs.com/package/nconf) for more info. if you need this way.
+
+#### Create shortcut
+```
+    var app = require('plus.application').create({
+         dir: __dirname,
+         env: process.env.NODE_ENV || 'dev' // NODE_ENV or 'dev'
+     });
+```
+
+its equal to
+```
+    var app = new Application({
+        dir: __dirname,
+        env: process.env.NODE_ENV || 'dev' // NODE_ENV or 'dev'
+    });
+
+```
 
 Have a fun and manage your applications!
 [+1G Team](http://plus1generation.com)

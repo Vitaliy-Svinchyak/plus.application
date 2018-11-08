@@ -1,18 +1,18 @@
-var Application = function (options) {
+let Config = require('plus.config');
+let Container = require('plus.container');
 
-    var merge = require('merge');
-    var Config = require('plus.config');
-    var Container = require('plus.container');
-
+let Application = function (options) {
     this.dir = '.';
     this.env = 'dev';
 
-    merge(this, options || {});
+    for (let name in options) {
+        this[name] = options[name];
+    }
 
     this.config = new Config(
         {
             dir: this.dir,
-            env: this.env
+            env: this.env,
         });
 
     this.container = Container.load(
@@ -20,28 +20,28 @@ var Application = function (options) {
             dir: this.dir,
             env: this.env,
             services: {
-                config: this.config
-            }
+                config: this.config,
+            },
         });
 
     this.get = function (name) {
         return this.container.get(name);
-    }
+    };
 
     this.set = function (name, value) {
         return this.container.set(name, value);
-    }
+    };
 
-    this.load = function(options)
-    {
-        var options = merge({
+    this.load = function (options = {}) {
+        options = {
             dir: this.dir,
-            env: this.env
-        }, options || {});
+            env: this.env,
+            ...options,
+        };
 
         this.config.load(options);
         this.container.load(options);
-    }
+    };
 
     this.wrap = function (object) {
         object.config = this.config;
@@ -49,7 +49,7 @@ var Application = function (options) {
         object.application = this;
 
         return this;
-    }
+    };
 
 };
 

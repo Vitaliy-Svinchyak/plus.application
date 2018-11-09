@@ -20,7 +20,7 @@
     "istanbul": "~0.2.8"
   },
   "dependencies": {
-    "plus.config": "1.0.10",
-    "plus.container": "github:Vitaliy-Svinchyak/plus.container#master"
+    "plus.config": "github:Vitaliy-Svinchyak/plus.config#master",
+    "plus.container": "github:Vitaliy-Svinchyak/plus.container#test-optimize"
   }
 }
